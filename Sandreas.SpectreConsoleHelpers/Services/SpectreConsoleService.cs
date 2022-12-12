@@ -1,7 +1,7 @@
 using Spectre.Console;
 using Spectre.Console.Rendering;
 
-namespace Sandreas.SpectreConsoleHelpers.DependencyInjection;
+namespace Sandreas.SpectreConsoleHelpers.Services;
 
 public class SpectreConsoleService : IAnsiConsole
 {
