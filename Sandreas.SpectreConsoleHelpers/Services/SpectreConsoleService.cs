@@ -23,6 +23,14 @@ public class SpectreConsoleService : IAnsiConsole
     public IExclusivityMode ExclusivityMode => Output.ExclusivityMode;
     public RenderPipeline Pipeline => Output.Pipeline;
 
+    public void WriteNoBreakLine(string text)
+    {
+        var oldWidth = Output.Profile.Width;
+        Output.Profile.Width = text.Length;
+        Output.WriteLine(text, Style.Plain);
+        Output.Profile.Width = oldWidth;
+    } 
+    
     public void Clear(bool home)
     {
         Output.Clear(home);
